@@ -1,10 +1,12 @@
-import {Router as router} from 'express'
+import {Router} from 'express'
 
 const router = Router()
 
 router 
   .router('/users')
   .get(listeUsers)
+
+module.exports = router
 
 
 function listeUsers(req, res) {

@@ -1,18 +1,10 @@
 import {Router} from 'express'
+import users from './users/users.controller.js'
 
 const router = Router()
 
 router 
-  .router('/users')
-  .get(listeUsers)
+  .route('/users')
+  .get(users.list)
 
 module.exports = router
-
-
-function listeUsers(req, res) {
-  const users = [
-    {name: 'Eduardo'},
-    {name: 'Cajaiba'},
-  ]
-  res.json(users)
-}

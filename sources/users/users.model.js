@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
   lastname: {type: String, trim: true, required: true},
   email: {type: String, trim: true, required: true, unique: true,},
   active: {type: Boolean, defaut: true},
-  password: {type: String, required: true, set: encode.md5}
+  password: {type: String, required: true, set: encode.md5},
 })
 
 module.exports = mongoose.model('users', schema)

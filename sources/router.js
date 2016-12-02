@@ -4,7 +4,13 @@ import validate from './validate/validate.controller.js'
 
 const router = Router()
 
+router
+  .route('/users/authenticate')
+  .post(users.authenticate)
+
 router.param('id', validate.id)
+
+router.use(validate.token)
 
 router 
   .route('/users')
